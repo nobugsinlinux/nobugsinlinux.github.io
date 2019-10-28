@@ -1,23 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>郭源潮</title>
+  <title>G2.int.BUPT</title>
   
-  
+  <subtitle>我爱网管</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-27T10:58:14.351Z</updated>
+  <updated>2019-10-28T12:32:13.591Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>郭源潮</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>see you</title>
+    <title>剑指offerREADME</title>
+    <link href="http://yoursite.com/2019/10/28/%E5%89%91%E6%8C%87offerREADME/"/>
+    <id>http://yoursite.com/2019/10/28/剑指offerREADME/</id>
+    <published>2019-10-28T12:32:13.000Z</published>
+    <updated>2019-10-28T12:32:13.591Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>See You</title>
     <link href="http://yoursite.com/2019/10/27/see-you/"/>
     <id>http://yoursite.com/2019/10/27/see-you/</id>
     <published>2019-10-27T10:58:14.000Z</published>
