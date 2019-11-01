@@ -17,19 +17,15 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>剑指Offer（扩展）快排 P80 | 郭源潮</title>
-  <meta name="description" content="剑指offer（扩展）快排    P801234567891011121314151617181920212223242526272829303132333435363738391.	快速排序  （递归实现）void quickSort(int nums[], int start, int end) &amp;#123;	if (nums == NULL || start &amp;gt; end || star">
-<meta name="keywords" content="排序">
-<meta property="og:type" content="article">
-<meta property="og:title" content="剑指Offer（扩展）快排 P80">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;%E5%89%91%E6%8C%87offer%E6%89%A9%E5%B1%95&#x2F;index.html">
+  <title>分类: 剑指offer | 郭源潮</title>
+  <meta property="og:type" content="website">
+<meta property="og:title" content="G2.int.BUPT">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;categories&#x2F;%E5%89%91%E6%8C%87offer&#x2F;page&#x2F;4&#x2F;index.html">
 <meta property="og:site_name" content="G2.int.BUPT">
-<meta property="og:description" content="剑指offer（扩展）快排    P801234567891011121314151617181920212223242526272829303132333435363738391.	快速排序  （递归实现）void quickSort(int nums[], int start, int end) &amp;#123;	if (nums == NULL || start &amp;gt; end || star">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-01T08:51:14.709Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2019/10/31/%E5%89%91%E6%8C%87offer%E6%89%A9%E5%B1%95/index.html">
+  <link rel="canonical" href="http://yoursite.com/categories/%E5%89%91%E6%8C%87offer/page/4/index.html">
   
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -325,160 +321,151 @@
 </aside>
 
   
-  
-<main class="main" role="main">
-  <div class="content">
-  <article id="post-剑指offer扩展" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-    
-    <div class="article-header">
-      
-        
-  
-    <h1 class="article-title" itemprop="name">
-      剑指Offer（扩展）快排 P80
-    </h1>
-  
-
-      
-      <div class="article-meta">
-        <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/10/31/%E5%89%91%E6%8C%87offer%E6%89%A9%E5%B1%95/" class="article-date">
-	  <time datetime="2019-10-31T06:14:48.000Z" itemprop="datePublished">2019-10-31</time>
-	</a>
-</span>
-        
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E5%89%91%E6%8C%87offer/">剑指offer</a>
-  </span>
-
-        
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a>
-  </span>
-
-
-        
-
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/10/31/%E5%89%91%E6%8C%87offer%E6%89%A9%E5%B1%95/#comments" class="article-comment-link">评论</a></span>
-        
-      </div>
+  <main class="main" role="main">
+  <article class="content article article-categories article-type-list" itemscope="">
+    <header class="article-header">
+      <h1 itemprop="name" class="hidden-xs">分类: 剑指offer</h1>
+      <p class="hidden-xs">共 10 篇文章</p>
+      <nav role="navigation" id="nav-main" class="okayNav">
+        <ul>
+          <li><a href="/categories">All</a></li>
+          
+          <li><a href="/categories/剑指offer/">剑指offer</a></li>
+          
+          <li><a href="/categories/README/">README</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+    <!-- /header -->
+    <div class="article-body">
+      <div class="panel panel-default b-no">
+    <div class="panel-heading" role="tab">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapse剑指offer" aria-expanded="true">
+              <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>
+              剑指offer
+            </a>
+            <small class="text-muted">(Total 10 articles)</small>
+        </h4>
     </div>
-    <div class="article-entry marked-body" itemprop="articleBody">
-      
-        <h2 id="剑指offer（扩展）快排-P80"><a href="#剑指offer（扩展）快排-P80" class="headerlink" title="剑指offer（扩展）快排    P80"></a>剑指offer（扩展）快排    P80</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>	快速排序  （递归实现）</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> nums[], <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (nums == <span class="literal">NULL</span> || start &gt; end || start &lt; <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">int</span> flag = nums[start], i = start, j = end;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">		<span class="keyword">while</span> (nums[j] &gt;= flag &amp;&amp; i &lt; j)  --j;    <span class="comment">// 一定是 先 从右往左找</span></span><br><span class="line">		nums[i] = nums[j];</span><br><span class="line">		<span class="keyword">while</span>(nums[i] &lt;= flag &amp;&amp; i &lt; j)   ++i;</span><br><span class="line">	    nums[j] = nums[i];</span><br><span class="line">	&#125; </span><br><span class="line">	nums[i] = flag;                           <span class="comment">// 确定当前基准值的位置 i</span></span><br><span class="line">	quickSort(nums, start, i - <span class="number">1</span>);</span><br><span class="line">	quickSort(nums, i + <span class="number">1</span>, end);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>	给公司员工年龄排序  P81</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ageSort</span><span class="params">(<span class="keyword">int</span> nums[], <span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (nums == <span class="literal">NULL</span> || len &lt; <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> range_of_age_up  = <span class="number">100</span>;             <span class="comment">// 年龄上界</span></span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> range_of_age_down = <span class="number">0</span>;             <span class="comment">//  年龄下界</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> *hash = <span class="keyword">new</span> <span class="keyword">int</span>[range_of_age_up + <span class="number">1</span>];    <span class="comment">// hash表存对应年龄出现次数</span></span><br><span class="line">	<span class="built_in">memset</span>(hash, <span class="number">0</span>, <span class="keyword">sizeof</span>(hash) * (range_of_age_up + <span class="number">1</span>) );  <span class="comment">// 注意长度！</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; ++i) &#123;</span><br><span class="line">		<span class="keyword">if</span> (nums[i] &lt; range_of_age_down || nums[i] &gt; range_of_age_up) &#123;   <span class="comment">// 异常</span></span><br><span class="line">			<span class="keyword">throw</span> <span class="string">"sorry , out of range !"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		++hash[nums[i]];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> index = <span class="number">0</span>;                          <span class="comment">// 排序后的数组索引 </span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= range_of_age_up; ++i)  <span class="comment">//  统计每个年龄 i出现的次数hash[j]</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; hash[i]; ++j)        <span class="comment">// 那么连着hash[j]个元素就是年龄i</span></span><br><span class="line">			nums[index++] = i;            </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <div id="collapse剑指offer" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading剑指offer">
+        <div class="panel-body">
+            <div class="collection">
+              
+                
+<a href="/2019/10/31/%E5%89%91%E6%8C%87offer11/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2019-10-31T06:42:37.000Z" itemprop="datePublished">2019-10-31</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 剑指Offer11．旋转数组的最小数字 P82
+</a>
 
-      
+
+              
+                
+<a href="/2019/10/31/%E5%89%91%E6%8C%87offer%E6%89%A9%E5%B1%95/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2019-10-31T06:14:48.000Z" itemprop="datePublished">2019-10-31</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 剑指Offer（扩展）快排 P80
+</a>
+
+
+              
+                
+<a href="/2019/10/31/%E5%89%91%E6%8C%87offer10/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2019-10-31T06:14:44.000Z" itemprop="datePublished">2019-10-31</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 剑指Offer10. 高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题P74
+</a>
+
+
+              
+                
+<a href="/2019/10/31/%E5%89%91%E6%8C%87offer9/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2019-10-31T06:14:40.000Z" itemprop="datePublished">2019-10-31</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 剑指Offer9. 两个栈实现队列 P68
+</a>
+
+
+              
+                
+<a href="/2019/10/31/%E5%89%91%E6%8C%87offer8/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2019-10-31T06:14:35.000Z" itemprop="datePublished">2019-10-31</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 剑指Offer8. 二叉树的下一个节点 P65
+</a>
+
+
+              
+                
+<a href="/2019/10/31/%E5%89%91%E6%8C%87offer7/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2019-10-31T06:14:31.000Z" itemprop="datePublished">2019-10-31</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 剑指Offer7. 重建二叉树 P62
+</a>
+
+
+              
+                
+<a href="/2019/10/31/%E5%89%91%E6%8C%87offer6/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2019-10-31T06:14:27.000Z" itemprop="datePublished">2019-10-31</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 剑指Offer6. 插入并从尾到头打印链表 P58
+</a>
+
+
+              
+                
+<a href="/2019/10/31/%E5%89%91%E6%8C%87offer5/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2019-10-31T06:14:21.000Z" itemprop="datePublished">2019-10-31</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 剑指Offer5. 替换空格   P51
+</a>
+
+
+              
+                
+<a href="/2019/10/31/%E5%89%91%E6%8C%87offer4/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2019-10-31T06:11:24.000Z" itemprop="datePublished">2019-10-31</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 剑指offer4.二维数组中查找  P44
+</a>
+
+
+              
+                
+<a href="/2019/10/31/%E5%89%91%E6%8C%87offer3/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2019-10-31T04:04:12.000Z" itemprop="datePublished">2019-10-31</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 剑指Offer 3. 数组中重复的(所有)数字
+</a>
+
+
+              
+            </div>
+        </div>
     </div>
-    <div class="article-footer">
-      <blockquote class="mt-2x">
-  <ul class="post-copyright list-unstyled">
-    
-    <li class="post-copyright-link hidden-xs">
-      <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2019/10/31/%E5%89%91%E6%8C%87offer%E6%89%A9%E5%B1%95/" title="剑指Offer（扩展）快排 P80" target="_blank" rel="external">http://yoursite.com/2019/10/31/%E5%89%91%E6%8C%87offer%E6%89%A9%E5%B1%95/</a>
-    </li>
-    
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-</blockquote>
-
-
+</div>
     </div>
   </article>
   
     
-  <section id="comments">
-  	
-      <div id="vcomments"></div>
-    
-  </section>
-
-
-  
-</div>
-
-  <nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-  
-  <ul class="pager pull-left">
-    
-    <li class="prev">
-      <a href="/2019/10/31/%E5%89%91%E6%8C%87offer11/" title="剑指Offer11．旋转数组的最小数字 P82"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
-    
-    <li class="next">
-      <a href="/2019/10/31/%E5%89%91%E6%8C%87offer10/" title="剑指Offer10. 高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题P74"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
-  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
-    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
-  </div> -->
-  
-  
-  <div class="bar-right">
-    
-    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
-    
-  </div>
-  </div>
-</nav>
-  
-<!-- Modal -->
-<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content donate">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <div class="modal-body">
-        <div class="donate-box">
-          <div class="donate-head">
-            <p>感谢您的支持，我会继续努力的!</p>
-          </div>
-          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
-              <div class="donate-payimg">
-                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
-              </div>
-              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
-              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
-              <div class="donate-payimg">
-                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
-              </div>
-              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
-              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
-            </div>
-          </div>
-          <div class="donate-footer">
-            <ul class="nav nav-tabs nav-justified" role="tablist">
-              <li role="presentation" class="active">
-                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
-              </li>
-              <li role="presentation" class="">
-                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
-              </li>
-            </ul>
-          </div>
+    <nav class="bar bar-footer clearfix" data-stick-bottom>
+        <div class="bar-inner">
+        <ul class="pager pull-left">
+            
+            <li class="prev">
+                <a href="/categories/%E5%89%91%E6%8C%87offer/page/3/">
+                    <i class="icon icon-angle-left"></i>
+                    上一页
+                </a>
+            </li>
+            
+            
+            <li class="next disabled">
+                <a href="javascript:;">
+                    下一页
+                    <i class="icon icon-angle-right"></i>                    
+                </a>
+            </li>
+            
+        </ul>
+        <div class="total-article bar-right">Page 4 of 4</div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
+    </nav>
+    
+ 
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -526,37 +513,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-
-   
-
-
-
-
-   
-    
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/valine"></script>
-  <script type="text/javascript">
-  var GUEST = ['nick', 'mail', 'link'];
-  var meta = 'nick,mail,link';
-  meta = meta.split(',').filter(function(item) {
-    return GUEST.indexOf(item) > -1;
-  });
-  new Valine({
-    el: '#vcomments',
-    verify: false,
-    notify: false,
-    appId: '',
-    appKey: '',
-    placeholder: 'Just go go',
-    avatar: 'mm',
-    meta: meta,
-    pageSize: '10' || 10,
-    visitor: false
-  });
-  </script>
-
-     
 
 
 
