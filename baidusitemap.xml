@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2019/10/30/README/</loc>
+    <lastmod>2019-11-03</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2019/11/01/%E5%89%91%E6%8C%87offer36/</loc>
     <lastmod>2019-11-03</lastmod>
   </url>  <url>
@@ -75,9 +78,6 @@
   </url>  <url>
     <loc>http://yoursite.com/2019/11/01/%E5%89%91%E6%8C%87offer42/</loc>
     <lastmod>2019-11-03</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/10/30/README/</loc>
-    <lastmod>2019-11-01</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2019/10/31/%E5%89%91%E6%8C%87offer%E6%89%A9%E5%B1%95/</loc>
     <lastmod>2019-11-01</lastmod>
