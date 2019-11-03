@@ -18,15 +18,15 @@
   
   
   <title>剑指Offer10. 高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题P74 | 郭源潮</title>
-  <meta name="description" content="剑指offer10 .  高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题p74123456789101112131415&#x2F;&#x2F;优化后的斐波那契long long fb(int n) &amp;#123;	if (n &amp;lt; 0) return -1;	int table[2] = &amp;#123;0, 1&amp;#125;;	if (n &amp;lt; 2) return table[n];	long long pre1">
+  <meta name="description" content="剑指offer10 .  高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题p74123456789101112131415&#x2F;&#x2F;优化后的斐波那契long long fb(int n) &amp;#123;	if (n &amp;lt; 0) return -1;	    int table[2] = &amp;#123;0, 1&amp;#125;;	if (n &amp;lt; 2) return table[n];	    long l">
 <meta name="keywords" content="动态规划">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑指Offer10. 高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题P74">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;%E5%89%91%E6%8C%87offer10&#x2F;index.html">
 <meta property="og:site_name" content="G2.int.BUPT">
-<meta property="og:description" content="剑指offer10 .  高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题p74123456789101112131415&#x2F;&#x2F;优化后的斐波那契long long fb(int n) &amp;#123;	if (n &amp;lt; 0) return -1;	int table[2] = &amp;#123;0, 1&amp;#125;;	if (n &amp;lt; 2) return table[n];	long long pre1">
+<meta property="og:description" content="剑指offer10 .  高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题p74123456789101112131415&#x2F;&#x2F;优化后的斐波那契long long fb(int n) &amp;#123;	if (n &amp;lt; 0) return -1;	    int table[2] = &amp;#123;0, 1&amp;#125;;	if (n &amp;lt; 2) return table[n];	    long l">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-01T08:47:32.404Z">
+<meta property="og:updated_time" content="2019-11-03T03:14:25.272Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2019/10/31/%E5%89%91%E6%8C%87offer10/index.html">
@@ -199,7 +199,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/README/">README</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%91%E6%8C%87offer/">剑指offer</a><span class="category-list-count">61</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%91%E6%8C%87offr/">剑指offr</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/README/">README</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%91%E6%8C%87offer/">剑指offer</a><span class="category-list-count">62</span></li></ul>
     </div>
   </div>
 
@@ -368,7 +368,7 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="剑指offer10-高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题p74"><a href="#剑指offer10-高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题p74" class="headerlink" title="剑指offer10 .  高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题p74"></a>剑指offer10 .  高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题p74</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//优化后的斐波那契</span><br><span class="line">long long fb(int n) &#123;</span><br><span class="line">	if (n &lt; 0) return -1;</span><br><span class="line">	</span><br><span class="line">int table[2] = &#123;0, 1&#125;;</span><br><span class="line">	if (n &lt; 2) return table[n];</span><br><span class="line">	</span><br><span class="line">long long pre1 = 1, pre2 = 0, fbn = 0;</span><br><span class="line">	for (int i = 2; i &lt;= n; ++i) &#123;</span><br><span class="line">		fbn = pre1 + pre2;</span><br><span class="line">		pre2 = pre1;</span><br><span class="line">		pre1 = fbn;</span><br><span class="line">	&#125;</span><br><span class="line">	return fbn;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="剑指offer10-高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题p74"><a href="#剑指offer10-高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题p74" class="headerlink" title="剑指offer10 .  高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题p74"></a>剑指offer10 .  高效率斐波那契数列，青蛙台阶问题，矩阵覆盖问题p74</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//优化后的斐波那契</span><br><span class="line">long long fb(int n) &#123;</span><br><span class="line">	if (n &lt; 0) return -1;</span><br><span class="line">	</span><br><span class="line">    int table[2] = &#123;0, 1&#125;;</span><br><span class="line">	if (n &lt; 2) return table[n];</span><br><span class="line">	</span><br><span class="line">    long long pre1 = 1, pre2 = 0, fbn = 0;</span><br><span class="line">	for (int i = 2; i &lt;= n; ++i) &#123;</span><br><span class="line">		fbn = pre1 + pre2;</span><br><span class="line">		pre2 = pre1;</span><br><span class="line">		pre1 = fbn;</span><br><span class="line">	&#125;</span><br><span class="line">	return fbn;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>青蛙跳台阶（只能跳1，2步）</strong>  </p>
 <p>设f(n)表示青蛙跳上n级台阶的跳法数。当只有一个台阶时，<br>n = 1时， 只有1中跳法；    n = 2时，有两种跳法；；<br>当n很大时，青蛙在最后一步跳到第n级台阶时，有两种情况：<br>一种是青蛙在第n-1个台阶跳一个台阶，那么青蛙完成前面n-1个台阶，就有f(n-1)种跳法，这是一个子问题。<br>另一种是青蛙在第n-2个台阶跳两个台阶到第n个台阶，那么青蛙完成前面n-2个台阶，就有f(n-2)种情况，这又是另外一个子问题。<br>两个子问题构成了最终问题的解，所以当n&gt;=3时，青蛙就有f(n)=f(n-1)+f(n-2)种跳法。  </p>
 <p><strong>扩展 ：如果一次可以跳1，2，3…n 级的话  f(n) = 2的n-1次方</strong><br>证明：  </p>
