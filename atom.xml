@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-03T02:57:37.421Z</updated>
+  <updated>2019-11-06T00:54:35.867Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode39 组合数和</title>
+    <link href="http://yoursite.com/2019/11/06/leetcode39/"/>
+    <id>http://yoursite.com/2019/11/06/leetcode39/</id>
+    <published>2019-11-06T00:47:42.000Z</published>
+    <updated>2019-11-06T00:54:35.867Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LeetCode39-组合数和"><a href="#LeetCode39-组合数和" class="headerlink" title="LeetCode39  组合数和"></a>LeetCode39  组合数和</h2><p>题目：给定一个的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。candidates 中的数字可以无限制重复被选取<br>说明：所有数字（包括 target）都是正整数。解集不能包含重复的组合。 </p><p><strong>无重复元素（所以这个题没有在for里判断nums[i]==nums[i-1]，因为每取一个i都生成一个分支，两个数相等，两个分支相等，得到结果重复，下面那个就要考虑了）</strong></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; combinationSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">     <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; ans;</span><br><span class="line">     <span class="keyword">if</span> (nums.empty() || target &lt; <span class="number">0</span>) <span class="keyword">return</span> ans;</span><br><span class="line">     sort(nums.begin(), nums.end());</span><br><span class="line">     <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; path;</span><br><span class="line">     <span class="keyword">int</span> index = <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">     <span class="keyword">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">     DFS(ans, nums, path, flag, target, index);</span><br><span class="line">     <span class="keyword">return</span> ans;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; &amp;ans, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; path, <span class="keyword">bool</span> flag, <span class="keyword">int</span> target, <span class="keyword">int</span> &amp;index)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (target &lt; <span class="number">0</span>) &#123;</span><br><span class="line">          flag = <span class="literal">false</span>;</span><br><span class="line">          <span class="keyword">return</span>;</span><br><span class="line">      &#125; </span><br><span class="line">      <span class="keyword">if</span> (target == <span class="number">0</span>) &#123;</span><br><span class="line">          flag = <span class="literal">false</span>;</span><br><span class="line">          ans.push_back(path);</span><br><span class="line">          <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = index; i &lt; nums.size(); ++i) &#123;</span><br><span class="line">          path.push_back(nums[i]);</span><br><span class="line">          </span><br><span class="line">          DFS(ans, nums, path, flag, target - nums[i], i);</span><br><span class="line">          </span><br><span class="line">          path.pop_back();</span><br><span class="line">          </span><br><span class="line">          <span class="keyword">if</span> (!flag) <span class="keyword">break</span>;  <span class="comment">// 这里如果剪枝的话，nums必须要先排序，这样才能证明i后面的都没有用</span></span><br><span class="line">      &#125;</span><br><span class="line">      flag = <span class="literal">true</span>;  <span class="comment">// 不加的话，会比加了变慢？？ 不懂，求告知</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;LeetCode39-组合数和&quot;&gt;&lt;a href=&quot;#LeetCode39-组合数和&quot; class=&quot;headerlink&quot; title=&quot;LeetCode39  组合数和&quot;&gt;&lt;/a&gt;LeetCode39  组合数和&lt;/h2&gt;&lt;p&gt;题目：给定一个的数组 candi
+      
+    
+    </summary>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
+    
+    
+      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode11 盛最多水的容器</title>
+    <link href="http://yoursite.com/2019/11/06/leetcode11/"/>
+    <id>http://yoursite.com/2019/11/06/leetcode11/</id>
+    <published>2019-11-06T00:47:26.000Z</published>
+    <updated>2019-11-06T00:50:48.466Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LeetCode-11-盛最多水的容器"><a href="#LeetCode-11-盛最多水的容器" class="headerlink" title="LeetCode 11  盛最多水的容器"></a>LeetCode 11  盛最多水的容器</h2><p>题目：给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。</p><p>我们知道，面积是等于高度乘以宽度，当宽度一定时，高度是由较短的一边来决定的，如果我们想去使面积增加，只有去往里移动较短的板，面积才有可能增加，（不用考虑横坐标减小的问题，因为当前的max是一直在比较中的）因为如果移动较长的板，此时的高度可能还是由较短的一段决定，而移动较短的板，下一个板可能会变长，进而使面积增加。</p><p>同时也可以看出这道题与最大值无关，计算公式应该是</p><pre><code>Math.min(height[head], height[tail]) * (tail - head),</code></pre><p>head和tail都出来，双指针不要太明显<br>因为每次接水面积的高是两个指针中指向的值较小的那个，所以为了求最大值，我们每次向中间移动的指针也应该是辣一个</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(height.empty() || height.size() &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = height.size() - <span class="number">1</span>;   <span class="comment">// 左右指针</span></span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;                       <span class="comment">// 答案，动态比较</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (left &lt; right)  &#123;</span><br><span class="line">            <span class="keyword">int</span> temp;</span><br><span class="line">            <span class="keyword">if</span> (height[left] &lt; height[right]) &#123;      <span class="comment">// 左边短当前总面积就是左边高度*底长</span></span><br><span class="line">                temp = height[left] * (right - left);</span><br><span class="line">                ++left;                    <span class="comment">// 左边指针往后找，看有没有比当前长的</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;                        <span class="comment">// 同理</span></span><br><span class="line">                temp = height[right] * (right - left);</span><br><span class="line">                --right;</span><br><span class="line">            &#125;</span><br><span class="line">            max = max &lt; temp ? temp : max;  <span class="comment">// 比较当前面积和历史最大面积</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;LeetCode-11-盛最多水的容器&quot;&gt;&lt;a href=&quot;#LeetCode-11-盛最多水的容器&quot; class=&quot;headerlink&quot; title=&quot;LeetCode 11  盛最多水的容器&quot;&gt;&lt;/a&gt;LeetCode 11  盛最多水的容器&lt;/h2&gt;&lt;p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/categories/leetcode/"/>
+    
+    
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
   
   <entry>
     <title>剑指Offer66. 构建乘积数组（不用除法） P312</title>
@@ -493,58 +545,6 @@
     
     
       <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>剑指offer46.把数字翻译成字符串 P231</title>
-    <link href="http://yoursite.com/2019/11/01/%E5%89%91%E6%8C%87offer46/"/>
-    <id>http://yoursite.com/2019/11/01/剑指offer46/</id>
-    <published>2019-11-01T08:13:42.000Z</published>
-    <updated>2019-11-03T02:00:07.932Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="剑指offer46-把数字翻译成字符串-P231"><a href="#剑指offer46-把数字翻译成字符串-P231" class="headerlink" title="剑指offer46 .  把数字翻译成字符串 P231"></a>剑指offer46 .  把数字翻译成字符串 P231</h2><p>题目：给定一个数字，我们按照如下规则把它翻译为字符串：0翻译成”a”，1翻<br>译成”b”，……，11翻译成”l”，……，25翻译成”z”。一个数字可能有多个翻译。例如12258有5种不同的翻译，它们分别是”bccfi”、”bwfi”、”bczi”、”mcfi”和”mzi”。请编程实现一个函数用来计算一个数字有多少种不同的翻译方法。</p><p>其实还是<strong>斐波那契问题</strong>，只不过要多加一个判断，看当前数字和前一个能不能组合成字母。<br>因为要遍历数字的每个位数，所以可以转换成字符串处理。</p><p><strong>状态转移方程:</strong>  </p><pre><code>如果当前元素和上一个元素可以组合成字母：                dp[i] = dp[i - 1] + dp[i - 2];否则，当前数字只有一个选择，那当前种类就和i-1时种类一样  dp[i] =  dp[i - 1];</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">transferNumberToString</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (num &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span> (num &lt; <span class="number">10</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> str = to_string(num); <span class="comment">// 转换成字符串</span></span><br><span class="line"><span class="keyword">int</span> len = str.length();</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> *dp = <span class="keyword">new</span> <span class="keyword">int</span>[len];   <span class="comment">// dp初始化</span></span><br><span class="line">dp[<span class="number">0</span>]= <span class="number">1</span>;</span><br><span class="line">dp[<span class="number">1</span>] = <span class="number">1</span>;  </span><br><span class="line"><span class="keyword">int</span> temp = (str[<span class="number">0</span>] - <span class="string">'0'</span>) * <span class="number">10</span> + str[<span class="number">1</span>] - <span class="string">'0'</span>;</span><br><span class="line"><span class="keyword">if</span> (temp &gt;= <span class="number">10</span> &amp;&amp; temp &lt;= <span class="number">25</span>) </span><br><span class="line">dp[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; len; ++i) &#123;  </span><br><span class="line"><span class="keyword">int</span> last = str[i - <span class="number">1</span>] - <span class="string">'0'</span>;</span><br><span class="line"><span class="keyword">int</span> cur  = str[i] - <span class="string">'0'</span> + last * <span class="number">10</span>;</span><br><span class="line"><span class="keyword">if</span> (cur &gt;= <span class="number">10</span> &amp;&amp; cur &lt;= <span class="number">25</span>) &#123;   <span class="comment">// 可以组成</span></span><br><span class="line">dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;                 <span class="comment">// 上一个字和自己组不成一个字母</span></span><br><span class="line">dp[i] =  dp[i - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> ans = dp[len - <span class="number">1</span>];</span><br><span class="line"><span class="keyword">delete</span>[] dp;</span><br><span class="line"><span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;剑指offer46-把数字翻译成字符串-P231&quot;&gt;&lt;a href=&quot;#剑指offer46-把数字翻译成字符串-P231&quot; class=&quot;headerlink&quot; title=&quot;剑指offer46 .  把数字翻译成字符串 P231&quot;&gt;&lt;/a&gt;剑指offer46 .
-      
-    
-    </summary>
-    
-    
-      <category term="剑指offer" scheme="http://yoursite.com/categories/%E5%89%91%E6%8C%87offer/"/>
-    
-    
-      <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>剑指offer45.把数组排成最小(大)数 P227</title>
-    <link href="http://yoursite.com/2019/11/01/%E5%89%91%E6%8C%87offer45/"/>
-    <id>http://yoursite.com/2019/11/01/剑指offer45/</id>
-    <published>2019-11-01T08:13:38.000Z</published>
-    <updated>2019-11-03T01:56:24.633Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="剑指offer45-把数组排成最小-大-数-P227"><a href="#剑指offer45-把数组排成最小-大-数-P227" class="headerlink" title="剑指offer45  把数组排成最小(大)数  P227"></a>剑指offer45  把数组排成最小(大)数  P227</h2><p>题目：输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。例如输入数组{3, 32, 321}，则打印出这3个数字能排成的最小数字321323。</p><p>这道题是隐藏的<strong>大数问题</strong>，应该想到用字符串操作，<strong>难点在于找到一个新的比较规则来排序数组</strong>，其实整数不好比的话，字符串字典序比较很容易想到，按字典序排, 321 ，32，3 拼接起来刚好满足要求。<strong>（和书上做法不太一样，这里用string + 可能存在效率问题）</strong></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;  <span class="comment">// 不是a &lt; b</span></span><br><span class="line"><span class="keyword">return</span> a + b &lt; b + a;    <span class="comment">// 看两个字符串相加怎么样字典序最小</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">minNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums)</span> </span>&#123; <span class="comment">// 原数组</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; v_str;            <span class="comment">// 用来把整数转换成string存储</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i : nums) &#123;</span><br><span class="line">v_str.push_back(to_string(i)); </span><br><span class="line">&#125; </span><br><span class="line">sort(v_str.begin(), v_str.end(), cmp); <span class="comment">// 按字典序排, 321, 32，3</span></span><br><span class="line"><span class="built_in">string</span> ans = <span class="string">""</span>;           <span class="comment">// 直接加就行       </span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i : v_str) &#123; <span class="comment">// str =str+ "a"加的运算产生的是一个新的对象，再把结果返回，                                    </span></span><br><span class="line">ans += i;   <span class="comment">// str += "a"涉及的是对象的引用，操作后返回引用，避免产生新对象。</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;剑指offer45-把数组排成最小-大-数-P227&quot;&gt;&lt;a href=&quot;#剑指offer45-把数组排成最小-大-数-P227&quot; class=&quot;headerlink&quot; title=&quot;剑指offer45  把数组排成最小(大)数  P227&quot;&gt;&lt;/a&gt;剑指offe
-      
-    
-    </summary>
-    
-    
-      <category term="剑指offer" scheme="http://yoursite.com/categories/%E5%89%91%E6%8C%87offer/"/>
-    
-    
-      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
