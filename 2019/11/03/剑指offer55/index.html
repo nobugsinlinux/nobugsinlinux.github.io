@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="G2.int.BUPT">
 <meta property="og:description" content="剑指offer 55. 二叉树的深度，平衡二叉 P271题目：输入一棵二叉树的根结点，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。 1.    普通二叉树的深度  P271 123456789&#x2F;&#x2F; 一棵二叉树的深度：是左右子树深度较大的+1int TreeDepth(const BinaryTreeNode *root) &amp;#123;	i">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-03T02:31:47.938Z">
+<meta property="og:updated_time" content="2019-11-16T02:48:12.227Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2019/11/03/%E5%89%91%E6%8C%87offer55/index.html">
@@ -188,7 +188,7 @@
     <div class="widget-body">
         <div id="board">
             <div class="content">
-                <p>剑指offer题解上传完毕，LeetCode正在上传... </p>
+                <p>剑指offer题解上传完毕</p> <p>LeetCode正在上传...</p>
             </div>
         </div>
     </div>
@@ -199,7 +199,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/README/">README</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode/">leetcode</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%91%E6%8C%87offer/">剑指offer</a><span class="category-list-count">62</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode/">leetcode</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%91%E6%8C%87offer/">剑指offer</a><span class="category-list-count">62</span></li></ul>
     </div>
   </div>
 
@@ -228,7 +228,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">20</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">19</span></li></ul>
     </div>
   </div>
 
@@ -370,7 +370,7 @@
       
         <h2 id="剑指offer-55-二叉树的深度，平衡二叉-P271"><a href="#剑指offer-55-二叉树的深度，平衡二叉-P271" class="headerlink" title="剑指offer 55. 二叉树的深度，平衡二叉 P271"></a>剑指offer 55. 二叉树的深度，平衡二叉 P271</h2><p>题目：输入一棵二叉树的根结点，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。</p>
 <p><strong>1.    普通二叉树的深度  P271</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一棵二叉树的深度：是左右子树深度较大的+1</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">TreeDepth</span><span class="params">(<span class="keyword">const</span> BinaryTreeNode *root)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (root == <span class="literal">NULL</span>)  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>	left = TreeDepth(root -&gt; m_pLeft);</span><br><span class="line">	<span class="keyword">int</span> right = TreeDepth(root -&gt; m_pRight);</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">return</span> (left &gt; right ? left : right) + <span class="number">1</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一棵二叉树的深度：是左右子树深度较大的+1</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">TreeDepth</span><span class="params">(<span class="keyword">const</span> BinaryTreeNode *root)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (root == <span class="literal">NULL</span>)  </span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span>	left = TreeDepth(root -&gt; m_pLeft);</span><br><span class="line">	<span class="keyword">int</span> right = TreeDepth(root -&gt; m_pRight);</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">return</span> (left &gt; right ? left : right) + <span class="number">1</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>2.    判断是不是平衡二叉树   P273</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实际上是后根遍历模板，比书上的先根少了重复遍历</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">IsBalanced_Solution</span><span class="params">(<span class="keyword">const</span> BinaryTreeNode *root)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> (root -&gt; m_pLeft != <span class="literal">NULL</span>) </span><br><span class="line">		IsBalanced_Solution(root -&gt; m_pLeft);</span><br><span class="line">	<span class="keyword">if</span> (root -&gt; m_pRight != <span class="literal">NULL</span>)</span><br><span class="line">		IsBalanced_Solution(root -&gt; m_pRight);</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">int</span> leftdepth  = TreeDepth(root -&gt; m_pLeft);</span><br><span class="line">	<span class="keyword">int</span> rightdepth = TreeDepth(root -&gt; m_pRight);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> sub = leftdepth - rightdepth;  <span class="comment">// 每个节点左右子树深度差&lt;=1</span></span><br><span class="line">	<span class="keyword">if</span> ( sub &lt; <span class="number">-1</span> || sub &gt; <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
